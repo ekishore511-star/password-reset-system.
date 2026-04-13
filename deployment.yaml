@@ -1,1 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: password-reset-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: password-reset
+  template:
+    metadata:
+      labels:
+        app: password-reset
+    spec:
+      containers:
+      - name: reset-container
+        image: openjdk:17-jdk-slim
 
